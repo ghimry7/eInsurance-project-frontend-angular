@@ -1,0 +1,23 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Tax Setting</p>
+    <form [formGroup]="taxData" (ngSubmit)="addTax()">
+        <div class="container">
+            <table class="table table-bordered mx-auto w-auto">
+                <tbody>
+                    <tr>
+                        <td>Tax Percentage: </td>
+                        <td><input type="text" class="form-control" name="taxPercentage" formControlName="taxPercentage"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="text-center"><button class="btn btn-danger">Add</button></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </form>
+    
+
+</div>

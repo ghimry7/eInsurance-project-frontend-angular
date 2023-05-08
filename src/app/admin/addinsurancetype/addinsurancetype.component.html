@@ -1,0 +1,30 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add Insurance Type</p>
+
+
+    <form [formGroup]="insuranceTypeData" (ngSubmit)="addInsuranceType()">
+
+        <div class="container">
+            <table class="table table-bordered table-striped mx-auto w-auto">
+                <tbody>
+                    <tr>
+                        <td>Insurance Type:</td>
+                        <td><input type="text" class="form-control" name="name" formControlName="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><select name="status" class="form-control" formControlName="status">
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <h1 class=" text-center head">CUSTOMER PROFILE</h1>
+    <div class="container mt-5">
+        <table class="table table-striped text-center ">
+            <tbody>
+                <tr>
+                    <th scope="col">First Name:</th>
+                    <th>
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.firstName}} disabled>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col">Last Name:</th>
+                    <th>
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.lastName}} disabled>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row">Date of Birth:</th>
+                    <td>
+                        <div class="md-form md-outline input-with-post-icon datepicker " id="formatsSection">
+                            <input type="text" id="formats-example" class="form-control text-xs"
+                                value={{profile?.dateOfBirth}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Login ID:</th>
+                    <td>
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.loginId}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Email ID:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.email}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">State:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.state}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">City:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.city}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Phone No:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.phoneNumber}} disabled>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Nominee:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.nominee}} disabled>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Nominee Relation:</th>
+                    <td colspan="2">
+                        <div class="input-group input-group-sm mb-3 text-xs">
+
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" value={{profile?.nomineeRelation}} disabled>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<nav *ngIf="checkLocalS()" class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bold font-style: italic text-white" href="#">e-Insurance</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" routerLink="DashboardComponent">HOME</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-white" routerLink="DashboardComponent" fragment="aboutUs">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="CustomerregisterComponent">REGISTER</a>
+                </li>
+
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        INSURANCE PLANS
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white" >
+                        <li class="nav-item dropdown" *ngFor="let type of insuracetype">
+                            <a class="dropdown-item  text-white"  (click)="setScheme(type.name)">{{type.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="DashboardComponent" fragment="contact">CONTACT</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white ml-auto" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        LOGIN
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li><a class="dropdown-item  text-white" routerLink="AdminloginComponent">ADMIN LOGIN</a>
+                        </li>
+                        <li><a class="dropdown-item  text-white" routerLink="EmployeeloginComponent">EMPLOYEE
+                                LOGIN</a></li>
+                        <li><a class="dropdown-item  text-white" routerLink="AgentloginComponent">AGENT LOGIN</a>
+                        </li>
+                        <li><a class="dropdown-item  text-white" routerLink="CustomerloginComponent">CUSTOMER
+                                LOGIN</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">View  City</p>
+   <div class="container">
+        <table class="table table-bordered tabel-striped mx-auto w-50">
+            <thead>
+                <tr>
+                    <th scope="col">State Name</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of city">
+                <tr>
+                    <td>
+                        {{item.stateName}}
+                    </td>
+                    <td>
+                        {{item.name}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+   </div>
+</div>

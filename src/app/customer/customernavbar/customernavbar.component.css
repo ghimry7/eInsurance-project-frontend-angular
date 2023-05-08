@@ -1,0 +1,13 @@
+.nav-item:hover {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.nav-item{
+    cursor: pointer;
+}

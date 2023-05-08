@@ -1,0 +1,69 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add Employee</p>
+    <form [formGroup]="customerData" (ngSubmit)="registerCust()">
+        <div class="table-responsive m-5">
+            <table class="table table-bordered mx-auto w-auto ">
+                <tbody>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" class="form-control" name="firstName" formControlName="firstName"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" class="form-control" name="lastName" formControlName="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td><input type="date" class="form-control" name="dob" formControlName="dob"></td>
+                    </tr>
+                    <tr>
+                        <td>Login ID:</td>
+                        <td><input type="text" class="form-control" name="loginId" formControlName="loginId"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="text" class="form-control" name="password" formControlName="password"></td>
+                        <span style="color:red" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">This field is required</span>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password:</td>
+                        <td><input type="password" class="form-control" name="confirmPassword" formControlName="confirmPassword"></td>
+                        <span style="color:red" *ngIf="confirmPasswordValidator && confirmPasswordValidator.errors?.['mustMatch']">Confirm Password didn't Match</span>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="mail" class="form-control" name="email" formControlName="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="number" class="form-control" name="phoneNumber" formControlName="phoneNumber"></td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" class="form-control" name="city" formControlName="city"></td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td><input type="text" class="form-control" name="state" formControlName="state"></td>
+                    </tr>
+                    <tr>
+                        <td>Nominee:</td>
+                        <td><input type="text" class="form-control" name="nominee" formControlName="nominee"></td>
+                    </tr>
+                    <tr>
+                        <td>Nominee Relation:</td>
+                        <td><input type="text" class="form-control" name="nomineeRelation" formControlName="nomineeRelation"></td>
+                    </tr>
+                    <tr>
+                        <td>Agent Login Id:</td>
+                        <td><input type="text" class="form-control" name="agentLoginId" formControlName="agentLoginId"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+</div>

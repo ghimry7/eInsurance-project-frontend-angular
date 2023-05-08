@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <p class="text-center m-3 head">Employee</p>
+    <div class="card mx-auto" style="width: 20rem ;">
+        <img src="assets/adminImg/circle/profile-modified.png" class="card-img-top" alt="...">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="card mx-auto" style="width: 20rem ;">
+            <ul class="list-group list-group-flush">
+                <div class="input-group ">
+                    <span class="input-group-text px-3 ">Login ID:</span>
+                    <input type="text" aria-label="First name" class="form-control" name="loginId" formControlName="loginId">
+                    <span style="color:red" *ngIf="userValidator && userValidator.invalid && userValidator.touched">This Field is
+                        required</span>
+                    <br>
+                </div>
+                <div class="input-group ">
+                    <span class="input-group-text px-.75rem">Password:</span>
+                    <input type="password" aria-label="First name" class="form-control" name="password" formControlName="password">
+                    <span style="color:red" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">This
+                        Field is invalid</span>
+                </div>
+        
+                <button class="btn btn-outline-primary" [disabled]="loginForm.invalid">Login</button>
+        
+            </ul>
+        </div>
+    </form>
+</div>
+
+

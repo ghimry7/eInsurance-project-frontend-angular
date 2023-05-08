@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add Employee</p>
+    <form [formGroup]="employeeData" (ngSubmit)="addEmployeeFun()">
+        <div class="table-responsive m-5">
+            <table class="table table-bordered mx-auto w-auto ">
+                <tbody>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" class="form-control" name="firstName" formControlName="firstName"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" class="form-control" name="lastName" formControlName="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td>Login ID:</td>
+                        <td><input type="text" class="form-control" name="loginId" formControlName="loginId"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="text" class="form-control" name="password" formControlName="password"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="mail" class="form-control" name="email" formControlName="email"></td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" class="form-control" name="city" formControlName="city"></td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td><input type="text" class="form-control" name="state" formControlName="state"></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><select name="status" id="status" class="form-control" formControlName="status">
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+</div>

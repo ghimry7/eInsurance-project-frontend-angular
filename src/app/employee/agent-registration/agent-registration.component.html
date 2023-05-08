@@ -1,0 +1,125 @@
+<div class="">
+
+    <h1 class=" text-center text-4xl mt-5">AGENT REGISTRATION</h1>
+    <P class=" text-center ">Kindly enter the credentials</P>
+
+    <div class="container mt-5">
+        <form [formGroup]="agentRegistration" (ngSubmit)="SaveData()">
+            <table class="table table-striped text-center">
+
+
+
+                <tbody>
+                    <tr>
+                        <th scope="col">First Name:</th>
+                        <th>
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="firstName" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="firstName" >
+                            </div>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th scope="col">Last Name:</th>
+                        <th>
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="lastName" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="lastName" >
+                            </div>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th scope="col">Login Id:</th>
+                        <th>
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="loginId" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="loginId" >
+                            </div>
+                        </th>
+
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">Password:</th>
+                        <td>
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="password" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="password">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Email ID:</th>
+                        <td colspan="2">
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="emailId" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="emailId">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">City:</th>
+                        <td colspan="2">
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="city" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="city">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">State:</th>
+                        <td colspan="2">
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="state" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="state">
+                            </div>
+                        </td>
+
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                        <th scope="row">Qualification:</th>
+                        <td colspan="2">
+                            <div class="input-group input-group-sm mb-3 text-xs">
+
+                                <input type="text" name="qualification" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" formControlName="qualification">
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><select name="status" id="status" class="form-control" formControlName="status">
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select></td>
+                    </tr>
+
+
+
+
+
+                </tbody>
+            </table>
+
+            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+                <button class="btn btn-danger text-black">Submit</button>
+
+            </div>
+        </form>

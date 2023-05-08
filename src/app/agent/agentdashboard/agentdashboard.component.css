@@ -1,0 +1,40 @@
+.card {
+    color: antiquewhite;
+    opacity: 0.5;
+    
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    z-index: 3;
+    border-color: #007bff !important;
+    opacity: 1;
+}
+
+.head {
+    color: black;
+    font-size: 50px;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+}
+
+.card-body {
+    cursor: pointer;
+    font-size: larger;
+    color: red;
+}
+
+.card-body:hover {
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}

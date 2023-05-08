@@ -1,0 +1,73 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Customer Insurance Records</p>
+    <div class="table-responsive m-5 mt-1">
+        <table class="table table-bordered table-stripped ">
+            <thead>
+                <tr>
+                    <th>customer Id</th>
+                    <th>Insurance Type</th>
+                    <th>Insurance Scheme</th>
+                    <th>Buy Date</th>
+                    <th>Maturity Date</th>
+                    <th>No of Years</th>
+                    <th>Total Investment Amount</th>
+                    <th>Months</th>
+                    <th>Installment Amount</th>
+                    <th>Interest Amount</th>
+                    <th>Sum Assured</th>
+                    <th>Installment</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of data | paginate:{id:'listing_pagination',itemsPerPage:3,currentPage:page,totalItems:totalRecords}">
+                <tr>
+                    <td>{{item.customerLoginId}}</td>
+                    <td>{{item.insuranceType}}</td>
+                    <td>{{item.insuranceScheme}}</td>
+                    <td>{{item.buyDate}}</td>
+                    <td>{{item.maturityDate}}</td>
+                    <td>{{item.noOfYears}}</td>
+                    <td>{{item.totalInvestmentAmount}}</td>
+                    <td>{{item.months}}</td>
+                    <td>{{item.installmentAmount}}</td>
+                    <td>{{item.interestAmount}}</td>
+                    <td>{{item.totalAmount}}</td>
+                    <td><button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)="installmentDetail(item)">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event"></pagination-controls>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table class="table table-bordered table-striped mx-auto w-auto">
+                        <thead>
+                            <tr>
+                                <td>Installment Date</td>
+                                <td>Installment Amount</td>
+                                <td>Paid</td>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of paymentDetail" >
+                          <tr>
+                            <td>{{item.paymentDate}}</td>
+                            <td>{{item.installmentAmount}}</td>
+                            <td>{{item.paid}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

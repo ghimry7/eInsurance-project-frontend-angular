@@ -1,0 +1,77 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add Insurance Plan</p>
+    <form [formGroup]="insurancePlan" (ngSubmit)="addInsurancePlan()">
+
+        <div class="container">
+            <table class="table table-bordered table-striped mx-auto w-auto">
+                <thead>
+                    <tr>
+                        <td>Insurance Scheme:</td>
+                        <td><select name="insurnaceSchemeName" class="form-control"
+                                formControlName="insurnaceSchemeName">
+                                <option *ngFor="let item of insuranceScheme" value={{item.name}}>{{item.name}}</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Policy Term:</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum:</td>
+                        <td><input type="text" class="form-control" name="minPolicyTerm"
+                                formControlName="minPolicyTerm"></td>
+                    </tr>
+                    <tr>
+                        <td>Maximum:</td>
+                        <td><input type="text" class="form-control" name="maxPolicyTerm"
+                                formControlName="maxPolicyTerm"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Age:</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum:</td>
+                        <td><input type="text" class="form-control" name="minAge" formControlName="minAge"></td>
+                    </tr>
+                    <tr>
+                        <td>Maximum:</td>
+                        <td><input type="text" class="form-control" name="maxAge" formControlName="maxAge"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Total Investment Amount:</td>
+                    </tr>
+                    <tr>
+                        <td>Minimum:</td>
+                        <td><input type="text" class="form-control" name="minInvestAmount"
+                                formControlName="minInvestAmount"></td>
+                    </tr>
+                    <tr>
+                        <td>Maximum:</td>
+                        <td><input type="text" class="form-control" name="maxInvestAmount"
+                                formControlName="maxInvestAmount"></td>
+                    </tr>
+                    <tr>
+                        <td>Profit Ratio:</td>
+                        <td><input type="text" class="form-control" name="profitRatio" formControlName="profitRatio">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><select name="status" class="form-control" formControlName="status">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </form>
+
+
+</div>

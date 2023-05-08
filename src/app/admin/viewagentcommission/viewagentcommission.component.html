@@ -1,0 +1,30 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Agent Commission Records</p>
+    <div class="table-responsive m-5 mt-1">
+        <table class="table table-bordered table-stripped ">
+            <thead>
+                <tr>
+                    <th>Agent Name</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Insurance Scheme</th>
+                    <th>Commission Amount</th>
+                    <th>Commission Withdrawn</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of data | paginate:{id:'listing_pagination',itemsPerPage:3,currentPage:page,totalItems:totalRecords}">
+                <tr>
+                    <td>{{item.loginId}}</td>
+                    <td>{{item.customerName}}</td>
+                    <td>{{item.buyDate}}</td>
+                    <td>{{item.scheme}}</td>
+                    <td>{{item.commissionAmount}}</td>
+                    <td>{{item.withdrawn|uppercase}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <pagination-controls id="listing_pagination" [maxSize]="5" [directionLinks]="true" (pageChange)="page=$event"></pagination-controls>
+        </div>
+    </div>
+</div>

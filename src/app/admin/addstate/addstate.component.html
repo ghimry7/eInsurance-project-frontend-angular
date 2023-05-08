@@ -1,0 +1,21 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add State</p>
+    <div class="conatiner">
+        <form [formGroup]="stateData" (ngSubmit)="addState()">
+            <table class="table table-bordered mx-auto w-auto">
+                <tbody>
+                    <tr>
+                        <td>State: </td>
+                        <td><input type="text" class="form-control" name="name" formControlName="name"></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2">
+                        <p class="text-center"><button class="btn btn-danger" id="printBtn">Add</button></p>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+      
+    </div>
+</div>

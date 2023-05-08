@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bold font-style: italic text-white" href="#">e-Insurance</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page"  routerLink="dashboard">
+                        DASHBOARD</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white " role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        AGENT
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-item text-white"  routerLink="AgentregisterComponent">Add Agent</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-item text-white"  routerLink="viewagent">View Agent</a>
+                        </li>
+                        <li><a class="dropdown-item text-white" routerLink="viewagentcommisssion">View Commission
+                            </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        CUSTOMER
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="viewcustomerComponent">
+                                View Customers</a>
+                        </li>
+                        <li><a class="dropdown-item text-white" routerLink="CustomerinsuranceComponent">Insurance
+                                Account</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        INSURANCE TYPE
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li><a class="dropdown-item text-white" routerLink="ViewinsurancetypeComponent" >
+                                View Insurance Type </a></li>
+                        <li><a class="dropdown-item text-white" routerLink="ViewinsuranceschemeComponent">
+                                View Insurance Scheme</a></li>
+                        <li><a class="dropdown-item text-white" routerLink="ViewinsuranceplanComponent">
+                                View Insurance Plan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        SETTINGS
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="TaxsettingComponent">Tax Settings</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="InsurancesettingComponent">Insurance
+                                Settings</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="AddcityComponent">Add City</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="ViewcityComponent">View City</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="AddstateComponent">Add State</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="ViewstateComponent">View State</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        ACCOUNT
+                    </a>
+                    <ul class="dropdown-menu bg-dark text-white">
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="ProfileComponent">Profile</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="dropdown-item text-white" routerLink="ChangepasswordComponent">Change Password</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" (click)="logout()" >LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

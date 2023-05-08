@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Add Insurance Scheme</p>
+
+    <form [formGroup]="addschemedata" (ngSubmit)="addScheme()" enctype="multipart/form-data">
+        <div class="container">
+            <table class="table table-bordered table-striped mx-auto w-auto">
+                <tbody>
+                    <tr>
+                        <td>Insurance Type:</td>
+                        <td><select id="status" class="form-control" name="insuranceName" formControlName="insuranceName">
+                                <option *ngFor="let item of insuracetype" value={{item.name}}>{{item.name}}</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Insurance Scheme:</td>
+                        <td><input type="text" class="form-control" name="name" formControlName="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Image:</td>
+                        <td><input type="file" name="img"  class="form-control" (change)="onFileSelected($event)"></td>
+                    </tr>
+                    <tr>
+                        <td>Commission for New Registration(%):</td>
+                        <td><input type="text" class="form-control" name="commissionForNewRegistration" formControlName="commissionForNewRegistration"></td>
+                    </tr>
+                    <tr>
+                        <td>Commission for Installment Payment(%):</td>
+                        <td><input type="text" class="form-control" name="commissionInstallmentPayment" formControlName="commissionInstallmentPayment"></td>
+                    </tr>
+                    <tr>
+                        <td>Note:</td>
+                        <td>
+                            <angular-editor [placeholder]="'Enter text here...'" [config]="config" class="form-control" name="note" formControlName="note"></angular-editor>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><select name="status" id="status" class="form-control" formControlName="status">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select></td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

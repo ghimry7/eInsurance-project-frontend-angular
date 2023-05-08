@@ -1,0 +1,19 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">View  State</p>
+    <div class="container">
+        <table class="table table-bordered tabel-striped mx-auto w-50">
+            <thead>
+                <tr>
+                    <th scope="col">State Name</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of state">
+                <tr>
+                    <td>
+                        {{item.name}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

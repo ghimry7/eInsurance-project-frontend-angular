@@ -1,0 +1,38 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">Commission Withdrawal Records</p>
+    <div class="table-responsive m-5 mt-1">
+        <table class="table table-bordered table-stripped ">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Insurance Scheme</th>
+                    <th>Commission Amount</th>
+                    <th>Withdrawn</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of data | paginate:{id:'listing_pagination',itemsPerPage:5,currentPage:page,totalItems:totalRecords}">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.customerName}}</td>
+                    <td>{{item.buyDate}}</td>
+                    <td>{{item.scheme}}</td>
+                    <td>{{item.commissionAmount}}</td>
+                    <td *ngIf="item.withdrawn==='yes';else block">Yes</td>
+                    <ng-template #block><td>No</td></ng-template>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Amount Withdrawan</td>
+                    <td>{{total}}</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <pagination-controls id="listing_pagination" [maxSize]="3" [directionLinks]="true" (pageChange)="page=$event"></pagination-controls>
+        </div>
+    </div>
+</div>

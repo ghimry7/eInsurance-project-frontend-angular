@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <h1 class=" text-center text-4xl mt-4">DOCUMENT</h1>
+    <div class="container mt-5 ">
+        <table class="table table-striped text-center mx-auto w-auto ">
+            <tbody>
+                <tr>
+                    <th scope="row">Adhar Card:</th>
+                    <th>
+                        <input class="form-control form-control-sm" type="file" accept="application/pdf"
+                            (change)="onAdharSelected($event)">
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row">Pan Card:</th>
+                    <th>
+                        <input class="form-control form-control-sm" accept="application/pdf" type="file"
+                            (change)="onPanSelected($event)">
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td colspan="2">
+                        <br>
+                        <div class="d-grid gap-2 col-6 text-center ">
+                            <button class="btn btn-danger text-black" type="submit"
+                                (click)="submitDocuments()">Submit</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <table class="table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Document Type</th>
+                    <th scope="col">Document Path</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adhar</td>
+                    <td>
+                        <p *ngIf="document.adhar!=null" style="color: red;"> <button type="submit"
+                                onclick="window.open(document.adhar)">Download!</button></p>
+                        <pdf-viewer [src]="document.adhar" [render-text]="true" [original-size]="false"
+                            style="width: 400px; height: 500px"></pdf-viewer>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pan Card</td>
+                    <td>
+                        <p *ngIf="document.adhar!=null" style="color: red;"> <button type="submit"
+                                onclick="window.open(document.pan)">Download!</button></p>
+                        <p *ngIf="document.pan!=null" style="color: red;">View</p>
+                        <pdf-viewer [src]="document.pan" [render-text]="true" [original-size]="false"
+                        style="width: 400px; height: 500px"></pdf-viewer>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+    </div>

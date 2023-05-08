@@ -1,0 +1,77 @@
+<div class="container-fluid ">
+    <p class="text-center m-3 head">View Insurance Scheme</p>
+    <div class="table-responsive m-5">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>Insurance Type</th>
+                    <th>Insurance Scheme</th>
+                    <th>Commission for New Registration</th>
+                    <th>Commission for Installment Payment</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of insuranceSchemeData">
+                <tr>
+                    <td>{{item.insuranceName}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.commissionForNewRegistration}}</td>
+                    <td>{{item.commissionInstallmentPayment}}</td>
+                    <td>{{item.status}}</td>
+                    <td><button class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)="edit(item)">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="insuranceTypeData" (ngSubmit)="updateInsuranceType()">
+                    <div class="container">
+                        <table class="table table-bordered table-striped mx-auto w-auto">
+                            <tbody>
+                                <tr>
+                                    <td>Insurance Scheme:</td>
+                                    <td><input type="text" class="form-control" name="name" formControlName="name" value={{insuranceScheme.name}}></td>
+                                </tr>
+                                <tr>
+                                    <td>Commission for New Registration(%):</td>
+                                    <td><input type="text" class="form-control" name="commissionForNewRegistration" formControlName="commissionForNewRegistration" value={{insuranceScheme.commissionForNewRegistration}}></td>
+                                </tr>
+                                <tr>
+                                    <td>Commission for Installment Payment(%):</td>
+                                    <td><input type="text" class="form-control" name="commissionInstallmentPayment" formControlName="commissionInstallmentPayment" value={{insuranceScheme.commissionInstallmentPayment}} ></td>
+                                </tr>
+                                <tr>
+                                    <td>Note:</td>
+                                    <td>
+                                        <angular-editor [placeholder]="'Enter text here...'" class="form-control" name="note" formControlName="note" [(ngModel)]="editor"></angular-editor>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Status:</td>
+                                    <td><select name="status" id="status" class="form-control" formControlName="status">
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
+                                        </select></td>
+                                </tr>
+                
+                                <tr>
+                                    <td colspan="2" class="text-center"><button class="btn btn-danger">Submit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

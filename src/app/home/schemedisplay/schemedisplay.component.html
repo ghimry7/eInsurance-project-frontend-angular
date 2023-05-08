@@ -1,0 +1,103 @@
+<h1 class="text-center mb-5" style="color:red">{{schemetype | uppercase}}</h1>
+<div class="container mx-auto w-auto" *ngFor="let item of insuranceSchemeData">
+    <div *ngIf="checkName(item.insuranceName)">
+        <a>
+            <h1 class="text-center mb-3" style="color:red">{{item.name}}</h1>
+        </a>
+        <div class="flex justify-center mb-5">
+            <p class="text-center"><img class=" w-25" src={{item.image}} alt="Cancer"></p>
+        </div>
+        <div>
+            <div class="note" [innerHTML]="item.note">
+
+            </div>
+        </div>
+        <a>
+            <p id="more" class="text-center" (click)="toggle()" (click)="getPlan(item.name)">{{buttonName}}</p>
+
+            <ng-container *ngIf="show">
+                <p class="text-center mt-4"><span> Plan Details:</span></p>
+                <table class="table table-bordered mt-3">
+                    <tbody>
+                        <tr>
+                            <td class="col-6">Policy term-minimum: </td>
+                            <td class="col-6">{{plan.minPolicyTerm}}</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td class="col-6">Policy term-maximum: </td>
+                            <td class="col-6">{{plan.maxPolicyTerm}}</td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="col-6">Minimum Age: </td>
+                            <td class="col-6">{{plan.minAge}}</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td class="col-6">Maximum Age: </td>
+                            <td class="col-6">{{plan.maxAge}}</td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="col-6">Minimum investment amount: Rs</td>
+                            <td class="col-6">{{plan.minInvestAmount}}</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td class="col-6">Maximum investment amount: Rs</td>
+                            <td class="col-6">{{plan.maxInvestAmount}}</td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="col-6">Profit Ratio: </td>
+                            <td class="col-6">{{plan.profitRatio}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center mt-4"><span>Interest Calculator:</span></p>
+                <table class="table table-bordered mt-3">
+                    <tbody>
+                        <tr class="table-light">
+                            <td class="col-6">No. of Years: </td>
+                            <td class="col-6"><input type="number" name="noOfYears" id="noOfYears"
+                                    class="w-50 border-b " #noOfYears></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td class="col-6">Total Investment Amount: </td>
+                            <td class="col-6"><input type="number" name="totalInvestAmount" id="totalInvestAmount"
+                                    class="w-50 border-b " #totalInvestAmount></td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="col-6">Months: </td>
+                            <td class="col-6"><select class="form-select w-50" aria-label="Default select example"
+                                    id="months" #months>
+                                    <option name="months">Select</option>
+                                    <option value="3">3</option>
+                                    <option value="6">6</option>
+                                    <option value="12">12</option>
+                                </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center"><button class="btn btn-danger "
+                        (click)="calculate(noOfYears.value,totalInvestAmount.value,months.value)">Calculate</button></p>
+                <table class="table table-bordered mt-3">
+                    <tbody>
+                        <tr class="table-light">
+                            <td class="col-6">Installment Amount: </td>
+                            <td class="col-6"><input type="number" name="installmentAmount" id="installmentAmount"
+                                    class="w-50 border-b bg-gray-400 " value={{installmentAmount}} disabled></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td class="col-6">Interest Amount: </td>
+                            <td class="col-6"><input type="number" name="interestAmount" id="interestAmount"
+                                    class="w-50 border-b bg-gray-400 " value={{interestAmount}} disabled></td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="col-6">Total Amount: </td>
+                            <td class="col-6"><input type="number" name="totalAmount" id="totalAmount"
+                                    class="w-50 border-b bg-gray-400" value={{totalAmount}} disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-center"><button class="btn btn-warning" (click)="back()">Back</button></p>
+            </ng-container>
+        </a>
+        <hr class="divide-y-12 divide-blue">
+    </div>
+</div>
